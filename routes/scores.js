@@ -40,20 +40,20 @@ router.patch('/phase1/:id', loadScore, function(req, res, next) {
 	if (req.body.business !== undefined) {
 		req.score.business += req.body.business;
 	}
+	if (req.body.gestion !== undefined) {
+		req.score.gestion += req.body.gestion;
+	}
 	if (req.body.management !== undefined) {
 		req.score.management += req.body.management;
 	}
-	if (req.body.marketing !== undefined) {
-		req.score.marketing += req.body.marketing;
-	}
-	if (req.body.coding !== undefined) {
-		req.score.coding += req.body.coding;
-	}
-	if (req.body.multimedia !== undefined) {
-		req.score.multimedia += req.body.multimedia;
+	if (req.body.technique !== undefined) {
+		req.score.technique += req.body.technique;
 	}
 	if (req.body.communication !== undefined) {
 		req.score.communication += req.body.communication;
+	}
+	if (req.body.conception !== undefined) {
+		req.score.conception += req.body.conception;
 	}
 
 	req.score.save(function(err, savedScore) {
@@ -68,22 +68,22 @@ router.patch('/phase1/:id', loadScore, function(req, res, next) {
 router.patch('/phase2/:id', loadScore, function(req, res, next) {
 
 	if (req.body.business !== undefined) {
-		req.score.business += 2 * req.body.business;
+		req.score.business += 1.5 * req.body.business;
+	}
+	if (req.body.gestion !== undefined) {
+		req.score.gestion += 1.5 * req.body.gestion;
 	}
 	if (req.body.management !== undefined) {
-		req.score.management += 2 * req.body.management;
+		req.score.management += 1.5 * req.body.management;
 	}
-	if (req.body.marketing !== undefined) {
-		req.score.marketing += 2 * req.body.marketing;
-	}
-	if (req.body.coding !== undefined) {
-		req.score.coding += 2 * req.body.coding;
-	}
-	if (req.body.multimedia !== undefined) {
-		req.score.multimedia += 2 * req.body.multimedia;
+	if (req.body.technique !== undefined) {
+		req.score.technique += 1.5 * req.body.technique;
 	}
 	if (req.body.communication !== undefined) {
-		req.score.communication += 2 * req.body.communication;
+		req.score.communication += 1.5 * req.body.communication;
+	}
+	if (req.body.conception !== undefined) {
+		req.score.conception += 1.5 * req.body.conception;
 	}
 
 	req.score.save(function(err, savedScore) {
