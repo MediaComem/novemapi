@@ -39,7 +39,7 @@ const joueurSchema = new Schema({
 		maxlength: [ 60, 'L\'email est trop longue' ],
 		validate: [ validator.isEmail, 'L\'adresse email n\'est pas valide' ]
 	},
-	
+
 	evenement_id: {
 		type: Schema.Types.ObjectId,
 		required: false,
@@ -51,32 +51,16 @@ const joueurSchema = new Schema({
 		type: Date,
 		default: Date.now
 	}
-	
-});
 
-/**
- * fonction qui valide si le score existe, via son id
- */
-function existingScore(value, callback) {
-	Score.findOne({ '_id': value }, function (err, joueur){
-		if (joueur){
-			callback(true);
-		} else {
-			callback(false);
-		}
-	});
-}
+});
 
 /**
  * fonction qui valide si l'évenement existe, via son id
  */
-function existingEvenement(value, callback) {
+function existingEvenement(value) {
 	Evenement.findOne({ '_id': value }, function (err, joueur){
-		if (joueur){
-			callback(true);
-		} else {
-			callback(false);
-		}
+		if (err) throw err;
+		return (joueur);
 	});
 }
 
