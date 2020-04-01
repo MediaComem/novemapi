@@ -52,7 +52,14 @@ npm start
 
 ## Configuration
 
-See [`config.js`][./config.js].
+Environment variable                   | Default value               | Description
+:------------------------------------- | :-------------------------- | :-----------------------------------------------------------------------
+`$NOVEM_ADMIN_TOKEN`                   | -                           | Bearer token required to authenticate requests to administration routes.
+`$NOVEM_BASE_PATH`                     | `/`                         | Base API path.
+`$NOVEM_MONGODB_URI` or `$MONGODB_URI` | `mongodb://localhost/novem` | MongoDB connection URL.
+`$NOVEM_PORT` or `$PORT`               | `3000`                      | Port on which the application's HTTP server will listen to.
+
+> See [`config.js`][./config.js] for more information.
 
 In development, environment variables can be set by creating an `.env` file (see
 [`.env.sample`](./.env.sample)).
