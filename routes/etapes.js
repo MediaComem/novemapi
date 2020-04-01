@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const Etape = require('../models/etape');
+const { authenticateAdmin } = require('./utils');
 
 /* GET etapes listing. */
 router.get('/', function(req, res, next) {
@@ -23,7 +24,7 @@ router.get('/niveau/:niveau', loadEtapeNiveau, function(req, res, next) {
 });
 
 /* POST new etape */
-router.post('/', function(req, res, next) {
+router.post('/', authenticateAdmin, function(req, res, next) {
 	// Create a new document from the JSON in the request body
 	const newEtape = new Etape(req.body);
 
@@ -40,7 +41,7 @@ router.post('/', function(req, res, next) {
 });
 
 /* PATCH update etape */
-router.patch('/:id', loadEtape, function(req, res, next) {
+router.patch('/:id', authenticateAdmin, loadEtape, function(req, res, next) {
 
 	if (req.body.question !== undefined) {
 		req.etape.question = req.body.question;
@@ -58,7 +59,7 @@ router.patch('/:id', loadEtape, function(req, res, next) {
 });
 
 /* DELETE delete etape */
-router.delete('/:id', loadEtape, function(req, res, next) {
+router.delete('/:id', authenticateAdmin, loadEtape, function(req, res, next) {
 
 	req.etape.remove(function(err) {
 		if (err) {

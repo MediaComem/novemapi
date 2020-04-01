@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const Evenement = require('../models/evenement');
+const { authenticateAdmin } = require('./utils');
 
 /* GET liste evenement  */
 router.get('/', function(req, res, next) {
@@ -18,7 +19,7 @@ router.get('/:id', loadEvenement, function(req, res, next) {
 });
 
 /* POST new evenement */
-router.post('/', checkPlageLibre,function(req, res, next) {
+router.post('/', authenticateAdmin, checkPlageLibre,function(req, res, next) {
 	// Create a new document from the JSON in the request body
 	const newEvenement = new Evenement(req.body);
 
@@ -36,7 +37,7 @@ router.post('/', checkPlageLibre,function(req, res, next) {
 });
 
 /* PATCH update evenement */
-router.patch('/:id', loadEvenement, checkPlageLibre, function(req, res, next) {
+router.patch('/:id', authenticateAdmin, loadEvenement, checkPlageLibre, function(req, res, next) {
 
 	if (req.body.nom !== undefined) {
 		req.evenement.nom = req.body.nom;
@@ -63,7 +64,7 @@ router.patch('/:id', loadEvenement, checkPlageLibre, function(req, res, next) {
 });
 
 /* DELETE delete evenement */
-router.delete('/:id', loadEvenement, function(req, res, next) {
+router.delete('/:id', authenticateAdmin, loadEvenement, function(req, res, next) {
 
 	req.evenement.remove(function(err) {
 		if (err) {

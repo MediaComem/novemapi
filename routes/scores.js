@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const Score = require('../models/score');
+const { authenticateAdmin } = require('./utils');
 
 /* GET score  */
 router.get('/', function(req, res, next) {
@@ -95,7 +96,7 @@ router.patch('/phase2/:id', loadScore, function(req, res, next) {
 });
 
 /* DELETE delete score */
-router.delete('/:id', loadScore, function(req, res, next) {
+router.delete('/:id', authenticateAdmin, loadScore, function(req, res, next) {
 
 	req.score.remove(function(err) {
 		if (err) {
