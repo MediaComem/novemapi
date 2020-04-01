@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
@@ -18,18 +17,15 @@ const staffs = require('./routes/staffs');
 const scores = require('./routes/scores');
 const evenements = require('./routes/evenements');
 const etapes = require('./routes/etapes');
-const datas = require('./routes/datas');
-const start = require('./routes/start');
+const data = require('./routes/data');
 
 const app = express();
 
 // view engine setup
 
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -43,8 +39,7 @@ router.use('/staffs', staffs);
 router.use('/scores', scores);
 router.use('/evenements', evenements);
 router.use('/etapes', etapes);
-router.use('/datas', datas);
-router.use('/start', start);
+router.use('/data', data);
 
 // Plug all routes under the configured base path.
 app.use(config.basePath, router);

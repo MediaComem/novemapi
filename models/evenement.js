@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 
 const evenementSchema = new Schema({
 	nom:{
-		type: String, 
+		type: String,
 		required: true,
 		maxlength:[ 40, 'Le nom de l\'événement est trop long' ]
 	},/*
@@ -30,7 +30,7 @@ const evenementSchema = new Schema({
 		type: Date,
 		default: Date.now
 	},
-	details: { 
+	details: {
 		objectifs: {
 			type: String,
 			required: false,
@@ -40,19 +40,19 @@ const evenementSchema = new Schema({
 			type: String,
 			required: false,
 			maxlength:[ 1000, 'La description est trop longue' ]
-		}, 
+		},
 		public: {
 			type: String,
 			required: false,
 			maxlength:[ 200, 'Le public est trop long' ]
-		}, 
+		},
 		remarques: {
 			type: String,
 			required: false,
 			maxlength:[ 1000, 'Les remarques sont trop longues' ]
 		}
 	}
-	
+
 });
 
 function dateDebut(value) {
@@ -63,13 +63,10 @@ function dateFin(value) {
 	return value > this.date_debut;
 }
 
-function existingStaff(value, callback) {
+function existingStaff(value) {
 	Staff.findOne({ '_id': value }, function (err, staff){
-		if (staff){
-			callback(true);
-		} else {
-			callback(false);
-		}
+		if (err) throw err;
+		return (staff);
 	});
 }
 

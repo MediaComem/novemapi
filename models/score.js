@@ -6,32 +6,32 @@ const Schema = mongoose.Schema;
 const scoreSchema = new Schema({
 
 	business:{
-		type: Number, 
+		type: Number,
 		required: false,
 		default: 2
 	},
 	gestion:{
-		type: Number, 
+		type: Number,
 		required: false,
 		default: 2
 	},
 	management:{
-		type: Number, 
+		type: Number,
 		required: false,
 		default: 2
 	},
 	communication:{
-		type: Number, 
+		type: Number,
 		required: false,
 		default: 2
 	},
 	technique:{
-		type: Number, 
+		type: Number,
 		required: false,
 		default: 2
 	},
 	conception:{
-		type: Number, 
+		type: Number,
 		required: false,
 		default: 2
 	},
@@ -48,16 +48,13 @@ const scoreSchema = new Schema({
 		type: Date,
 		default: Date.now
 	}
-	
+
 });
 
-function existingJoueur(value, callback) {
+function existingJoueur(value) {
 	Joueur.findOne({ '_id': value }, function (err, joueur){
-		if (joueur){
-			callback(true);
-		} else {
-			callback(false);
-		}
+		if(err) throw err;
+		return (joueur);
 	});
 }
 
