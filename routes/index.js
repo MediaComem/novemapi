@@ -1,9 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+var pkg = require('../package.json');
+
 router.get('/', function(req, res, next) {
-	res.render('index', { title: 'Express' });
+  res.send({
+    version: pkg.version
+  });
 });
 
 module.exports = router;

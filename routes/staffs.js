@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const Staff = require('../models/staff');
+const { authenticateAdmin } = require('./utils');
 
 /* GET staffs listing. */
 router.get('/', function(req, res, next) {
@@ -18,7 +19,7 @@ router.get('/:id', loadStaff, function(req, res, next) {
 });
 
 /* POST new staff */
-router.post('/', function(req, res, next) {
+router.post('/', authenticateAdmin, function(req, res, next) {
 	// Create a new document from the JSON in the request body
 	const newStaff = new Staff(req.body);
 
@@ -35,7 +36,7 @@ router.post('/', function(req, res, next) {
 });
 
 /* PATCH update staff */
-router.patch('/:id', loadStaff, function(req, res, next) {
+router.patch('/:id', authenticateAdmin, loadStaff, function(req, res, next) {
 
 	if (req.body.prenom !== undefined) {
 		req.staff.prenom = req.body.prenom;
@@ -56,7 +57,7 @@ router.patch('/:id', loadStaff, function(req, res, next) {
 });
 
 /* DELETE delete staff */
-router.delete('/:id', loadStaff, function(req, res, next) {
+router.delete('/:id', authenticateAdmin, loadStaff, function(req, res, next) {
 
 	req.staff.remove(function(err) {
 		if (err) {

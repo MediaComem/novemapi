@@ -1,25 +1,27 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+
+const config = require('./config');
+
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/transmedia');
+mongoose.connect(config.databaseUrl);
 
-var index = require('./routes/index');
+const index = require('./routes/index');
 
-var joueurs = require('./routes/joueurs');
-var staffs = require('./routes/staffs');
-var scores = require('./routes/scores');
-var evenements = require('./routes/evenements');
-var etapes = require('./routes/etapes');
-var datas = require('./routes/datas');
-var start = require('./routes/start');
-var babel = require("babel-core");
+const joueurs = require('./routes/joueurs');
+const staffs = require('./routes/staffs');
+const scores = require('./routes/scores');
+const evenements = require('./routes/evenements');
+const etapes = require('./routes/etapes');
+const datas = require('./routes/datas');
+const start = require('./routes/start');
 
-var app = express();
+const app = express();
 
 // view engine setup
 
@@ -34,21 +36,22 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//User bower_components
-app.use('/bower_components',  express.static(__dirname + '/bower_components'));
+const router = express.Router();
+router.use('/', index);
+router.use('/joueurs', joueurs);
+router.use('/staffs', staffs);
+router.use('/scores', scores);
+router.use('/evenements', evenements);
+router.use('/etapes', etapes);
+router.use('/datas', datas);
+router.use('/start', start);
 
-app.use('/', index);
-app.use('/joueurs', joueurs);
-app.use('/staffs', staffs);
-app.use('/scores', scores);
-app.use('/evenements', evenements);
-app.use('/etapes', etapes);
-app.use('/datas', datas);
-app.use('/start', start);
+// Plug all routes under the configured base path.
+app.use(config.basePath, router);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-	var err = new Error('Not Found');
+	const err = new Error('Not Found');
 	err.status = 404;
 	next(err);
 });

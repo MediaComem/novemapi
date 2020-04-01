@@ -2,9 +2,10 @@ var express = require('express');
 var router = express.Router();
 const Joueur = require('../models/joueur');
 const Evenement = require('../models/evenement');
+const { authenticateAdmin } = require('./utils');
 
 /* GET joueurs listing. */
-router.get('/', function(req, res, next) {
+router.get('/', authenticateAdmin, function(req, res, next) {
 	Joueur.find().sort('-date_creation').exec(function(err, joueurs) {
 		if (err) {
 			return next(err);
@@ -13,7 +14,7 @@ router.get('/', function(req, res, next) {
 	});
 });
 
-router.get('/emails', function(req, res, next) {
+router.get('/emails', authenticateAdmin, function(req, res, next) {
 	Joueur.find().sort('email').exec(function(err, joueurs) {
 		if (err) {
 			return next(err);
@@ -29,12 +30,12 @@ router.get('/emails', function(req, res, next) {
 });
 
 /* GET joueur by id */
-router.get('/:id', loadJoueur, function(req, res, next) {
+router.get('/:id', authenticateAdmin, loadJoueur, function(req, res, next) {
 	res.send(req.joueur);
 });
 
 /* POST new joueur */
-router.post('/', evenementEnCours, function(req, res, next) {
+router.post('/', authenticateAdmin, evenementEnCours, function(req, res, next) {
 	// Create a new document from the JSON in the request body
 	const newJoueur = new Joueur(req.body);
 
@@ -78,7 +79,7 @@ router.patch('/:id', loadJoueur, function(req, res, next) {
 });
 
 /* DELETE delete joueur */
-router.delete('/:id', loadJoueur, function(req, res, next) {
+router.delete('/:id', authenticateAdmin, loadJoueur, function(req, res, next) {
 
 	req.joueur.remove(function(err) {
 		if (err) {

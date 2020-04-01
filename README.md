@@ -1,13 +1,78 @@
-Installation :
+# Novem API
 
-  cd [un dossier sur votre ordinateur dans lequel viendra le dossier du projet]
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-  git clone git@github.com:ghiringh/transmedia.git
 
-  cd transmedia
+- [Installation](#installation)
+- [Development](#development)
+- [Production](#production)
+- [Configuration](#configuration)
+- [Authentication](#authentication)
 
-  npm install
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-  mongod (dans un autre terminal)
+## Installation
 
-  npm run dev
+```bash
+git clone https://github.com/MediaComem/novemapi.git
+cd novemapi
+npm ci
+```
+
+## Development
+
+Create a local environment file:
+
+```
+cp .env.sample .env
+```
+
+Change the admin token in `.env` and optionally update the rest of the
+configuration to suit your local development environment.
+
+Run the application in development mode with live code reload:
+
+```
+npm run dev
+```
+
+Visit http://localhost:3000 (if you are using the default port).
+
+## Production
+
+Run the application in production mode:
+
+```
+npm start
+```
+
+> Make sure to provide an admin token with `$NOVEM_ADMIN_TOKEN`, or admin routes
+> will not be accessible.
+
+## Configuration
+
+Environment variable                   | Default value               | Description
+:------------------------------------- | :-------------------------- | :-----------------------------------------------------------------------
+`$NOVEM_ADMIN_TOKEN`                   | -                           | Bearer token required to authenticate requests to administration routes.
+`$NOVEM_BASE_PATH`                     | `/`                         | Base API path.
+`$NOVEM_MONGODB_URI` or `$MONGODB_URI` | `mongodb://localhost/novem` | MongoDB connection URL.
+`$NOVEM_PORT` or `$PORT`               | `3000`                      | Port on which the application's HTTP server will listen to.
+
+> See [`config.js`][./config.js] for more information.
+
+In development, environment variables can be set by creating an `.env` file (see
+[`.env.sample`](./.env.sample)).
+
+## Authentication
+
+Some API routes require administrative rights. Send the admin token as a Bearer
+token in the Authorization header to access them:
+
+```
+POST /start HTTP/1.1
+Authorization: Bearer MY_SECRET_ADMIN_TOKEN
+```
+
+The admin token is configured with the `$NOVEM_ADMIN_TOKEN` environment variable
+when launching the API.

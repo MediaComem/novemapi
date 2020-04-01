@@ -1,5 +1,5 @@
 {
-  "name": "transmedia-api",
+  "name": "novem-api",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -24,6 +24,7 @@
     "validator": "^7.0.0"
   },
   "devDependencies": {
+    "dotenv": "^8.2.0",
     "nodemon": "^1.11.0"
   }
 }
