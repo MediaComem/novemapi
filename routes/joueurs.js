@@ -35,7 +35,7 @@ router.get('/:id', authenticateAdmin, loadJoueur, function(req, res, next) {
 });
 
 /* POST new joueur */
-router.post('/', authenticateAdmin, evenementEnCours, function(req, res, next) {
+router.post('/', evenementEnCours, function(req, res, next) {
 	// Create a new document from the JSON in the request body
 	const newJoueur = new Joueur(req.body);
 
