@@ -2,12 +2,12 @@
 	"evenements": {
 		"_model": "Evenement",
 		"evenement1": {
-			"nom": "Portes ouvertes 2019",
-			"date_debut": "2019-03-14T06:00:00.000+02:00",
-			"date_fin": "2019-03-15T23:59:00.000+02:00",
+			"nom": "Portes ouvertes 2020",
+			"date_debut": "2020-04-23T06:00:00.000+02:00",
+			"date_fin": "2020-05-23T23:59:00.000+02:00",
 			"details": {
 				"ojectifs": "Recruter de nouveaux étudiants, faire connaître l'ingénierie des médias",
-				"description": "Journée des portes ouvertes 2019 à la HEIG-VD",
+				"description": "Journée des portes ouvertes 2020 à la HEIG-VD",
 				"remarques": "Il s'agit ici des données obtenues au travers de l'application",
 				"public": "Étudiant·e·s en communication, en art et en technique, gymnasiens, matu pro, matu spécialisée, 16-25 ans"
 			}
@@ -15,17 +15,13 @@
 	},
 	"etapes": {
 		"_model": "Etape",
-		"welcome": {
-			"niveau": 0,
-			"question": "Bonjour ! Je m'appelle Novem. Je suis une intelligence artificielle qui a pour but de recherche de nouveaux ingénieur-e des médias ! Entrez votre prénom et commencez les épreuves pour connaitre votre profil !",
-			"propositions": {}
-		},
 		"etape1": {
 			"niveau": 1,
-			"question": "Imaginez votre premier jour de travail dans l’entreprise dont vous avez toujours rêvé. À votre arrivée, deux outils de travail vous attendent sur votre bureau. Lesquels préféreriez-vous y trouver ?",
+			"question": "Vous voilà engagé·e dans une entreprise! Avant de commencer à travailler, on vous demande de choisir deux outils …",
 			"propositions": [
 				{
-					"reponse": "Une caméra professionnelle",
+					"reponse": "Appareil photo",
+					"image_rel_url": "/images/tools/camera.svg",
 					"score": {
 						"business": 0,
 						"gestion": 0,
@@ -36,7 +32,8 @@
 					}
 				},
 				{
-					"reponse": "Un smartphone d'entreprise",
+					"reponse": "Smartphone",
+					"image_rel_url": "/images/tools/smartphone.svg",
 					"score": {
 						"business": 2,
 						"gestion": 2,
@@ -47,7 +44,8 @@
 					}
 				},
 				{
-					"reponse": "Une smartwatch",
+					"reponse": "Smartwatch",
+					"image_rel_url": "/images/tools/smartwatch.svg",
 					"score": {
 						"business": 3,
 						"gestion": 2,
@@ -58,7 +56,8 @@
 					}
 				},
 				{
-					"reponse": "Un super-ordinateur de calcul",
+					"reponse": "Ordinateur",
+					"image_rel_url": "/images/tools/computer.svg",
 					"score": {
 						"business": 0,
 						"gestion": 0,
@@ -69,7 +68,8 @@
 					}
 				},
 				{
-					"reponse": "Les accès à la plateforme de gestion de projets",
+					"reponse": "Outil de gestion de projets",
+					"image_rel_url": "/images/tools/projects.svg",
 					"score": {
 						"business": 0,
 						"gestion": 0,
@@ -80,7 +80,8 @@
 					}
 				},
 				{
-					"reponse": "Une tablette de dessin",
+					"reponse": "Tablette pour du dessin",
+					"image_rel_url": "/images/tools/draw.svg",
 					"score": {
 						"business": 1,
 						"gestion": 2,
@@ -94,10 +95,10 @@
 		},
 		"etape2": {
 			"niveau": 2,
-			"question": "Très bien. Le jour suivant, votre chef est sur le point de vous confier votre première mission. Laquelle vous motiverait le plus ?",
+			"question": "Le jour suivant, votre patron vous confie une liste de tâches à réaliser dans la journée. Vous commencez par quoi ? ",
 			"propositions": [
 				{
-					"reponse": "Créer la maquette visuelle d’une application mobile que l’entreprise doit développer",
+					"reponse": "Créer une maquette visuelle pour une application mobile",
 					"score": {
 						"business": 0,
 						"gestion": 0,
@@ -108,7 +109,7 @@
 					}
 				},
 				{
-					"reponse": "Analyser différentes offres de projet, établir leurs budgets, et choisir les plus intéressantes à vos yeux",
+					"reponse": "Estimer le budget d’un projet et réaliser son planning",
 					"score": {
 						"business": 2,
 						"gestion": 1,
@@ -119,7 +120,7 @@
 					}
 				},
 				{
-					"reponse": "Créer les visuels (photos et vidéos) pour une campagne Facebook en cours",
+					"reponse": "Faire une vidéo pour une campagne Facebook",
 					"score": {
 						"business": 0,
 						"gestion": 0,
@@ -130,7 +131,7 @@
 					}
 				},
 				{
-					"reponse": "Développer une nouvelle fonctionnalité pour le site internet de l’entreprise",
+					"reponse": "Développer une nouvelle fonctionnalité pour une site internet",
 					"score": {
 						"business": 0,
 						"gestion": 0,
@@ -141,7 +142,7 @@
 					}
 				},
 				{
-					"reponse": "Trouver un bon outil de gestion pour les réseaux sociaux",
+					"reponse": "Trouver un outil de gestion pour les réseaux sociaux",
 					"score": {
 						"business": 1,
 						"gestion": 0,
@@ -152,7 +153,7 @@
 					}
 				},
 				{
-					"reponse": "Faire des recherches sur une entreprise de vente en ligne de luxe pour qui il faut promouvoir un nouveau produit",
+					"reponse": "Aller à un RDV client pour parler de la promotion de son nouveau produit",
 					"score": {
 						"business": 0,
 						"gestion": 2,
@@ -166,10 +167,10 @@
 		},
 		"etape3": {
 			"niveau": 3,
-			"question": "Bien ! La semaine d'après, le responsable d'un projet de campagne publicitaire pour un client prestigieux vient vous voir et veut vous intégrer dans son équipe. Il vous propose quatre activités. Triez ces activités selon vos préférences.",
+			"question": "<p>Votre collègue a besoin de votre aide sur un site internet, il vous confie quatre activités à réaliser dans la journée.</p><p>Triez-les selon vos préférences …</p>",
 			"propositions": [
 				{
-					"reponse": "Un rendez-vous avec le client aura lieu la semaine suivante. Il pense que ça pourrait être bénéfique que vous l’accompagniez pour discuter du projet",
+					"reponse": "L’accompagner chez le client pour parler du contenu du site",
 					"score": {
 						"business": 1,
 						"gestion": 1,
@@ -180,7 +181,7 @@
 					}
 				},
 				{
-					"reponse": "Il vous propose d’aider un collègue qui est en train de finaliser l’identité visuelle de la campagne",
+					"reponse": "Aider un collègue sur l’identité visuelle",
 					"score": {
 						"business": 0,
 						"gestion": 0,
@@ -191,7 +192,7 @@
 					}
 				},
 				{
-					"reponse": "Le site web de campagne est bientôt prêt à être déployé, mais il faut effectuer des tests et corriger les bugs avec l’équipe de développement",
+					"reponse": "Corriger des bugs et effectuer des tests avec les développeurs",
 					"score": {
 						"business": 0,
 						"gestion": 1,
@@ -202,7 +203,7 @@
 					}
 				},
 				{
-					"reponse": "L’équipe en charge d’analyser les résultats de la campagne a besoin d’aide, il vous propose de découvrir les outils de monitoring qu’ils utilisent.",
+					"reponse": "Découvrir les outils de monitoring utilisés",
 					"score": {
 						"business": 0,
 						"gestion": 0,
@@ -216,7 +217,7 @@
 		},
 		"etape4": {
 			"niveau": 4,
-			"question": "Faisons un saut dans le temps : Après deux années d'expérience, le chef du département vous confie la mission d'organiser une journée de \"team building\". Vous faites des recherches et vous choisissez une des activités suivante.",
+			"question": "Fin d’année, vous avez comme mission d’organiser une journée <strong>“Team Building”</strong>. Vous avez donc rédigé une liste et vous devez prendre la décision finale, que choisissez-vous? ",
 			"propositions": [
 				{
 					"reponse": "Un jeu de piste en extérieur, imaginé et mis en place par vos soins",
@@ -266,12 +267,12 @@
 		},
 		"etape5": {
 			"niveau": 5,
-			"question": "Quelques années plus tard, vous aimeriez changer d'entreprise pour intégrer une petite start-up dynamique de 5 à 10 employés. Vous trouvez quatre annonces. Quel poste vous intéresse le plus ?",
+			"question": "<p>Quelques années plus tard, vous aimerez changer de boîte, vous regardez donc les offres d’emploi&nbsp;!</p><p>Choisissez celle qui vous plairait le plus …</p>",
 			"propositions": [
 				{
 					"reponse": {
 						"titre": "Spécialiste UX/UI",
-						"description": "Vous serez en charge de créer et d'optimiser des interfaces d'applications web et mobiles pour offrir la meilleure expérience possible aux utilisateurs"
+						"description": "Vous serez en charge de créer et d'optimiser des interfaces d'applications web et mobiles pour offrir la meilleure expérience possible aux utilisateurs."
 					},
 					"score": {
 						"business": 0,
@@ -299,7 +300,7 @@
 				{
 					"reponse": {
 						"titre": "Social Media Manager",
-						"description": "Aux commandes de l'écosystème digital de l'entreprise et de ses réseaux sociaux, vous devrez analyser et piloter la stratégie digitale de l'entreprise"
+						"description": "Aux commandes de l'écosystème digital de l'entreprise et de ses réseaux sociaux, vous devrez analyser et piloter la stratégie digitale de l'entreprise."
 					},
 					"score": {
 						"business": 0,
@@ -313,7 +314,7 @@
 				{
 					"reponse": {
 						"titre": "Développeur web & mobile",
-						"description": "Au sein d'une équipe de développement, vous serez amené à conceptualiser et développer des outils et service web et mobile en utilisant les technologies adaptées"
+						"description": "Au sein d'une équipe de développement, vous serez amené·e à conceptualiser et développer des outils et services web et mobile en utilisant les technologies adaptées."
 					},
 					"score": {
 						"business": 0,
@@ -326,12 +327,12 @@
 				}
 			]
 		},
-		"etape7": {
-			"niveau": 7,
-			"question": "Finalement, vous avez décidé de vous lancer dans votre propre aventure entrepreneuriale. Vous dressez une liste de tâches dont voici 6 éléments. Lesquelles êtes-vous impatient·e d'effectuer ? Triez-les de la plus motivante à la moins motivante",
+		"etape6": {
+			"niveau": 6,
+			"question": "Après avoir discuté avec vos proches, vous réalisez que vous avez plutôt envie de créer votre propre entreprise. <strong>Triez votre liste</strong> en fonction de vos actions …",
 			"propositions": [
 				{
-					"reponse": "Créer l'identité visuelle de l'entreprise",
+					"reponse": "Créer l’identité visuelle de votre entreprise",
 					"score": {
 						"business": 0,
 						"gestion": 0,
@@ -342,7 +343,7 @@
 					}
 				},
 				{
-					"reponse": "Mettre en place un outil de gestion de clients (CRM)",
+					"reponse": "Mettre en place un outil de gestion de clients",
 					"score": {
 						"business": 1,
 						"gestion": 0,
@@ -353,7 +354,7 @@
 					}
 				},
 				{
-					"reponse": "Chercher le mobilier et les éléments de décoration du bureau",
+					"reponse": "Décorer votre bureau en achetant le mobilier",
 					"score": {
 						"business": 0,
 						"gestion": 0,
@@ -364,7 +365,7 @@
 					}
 				},
 				{
-					"reponse": "Définir les valeurs et les principes que vous voulez véhiculer à travers votre entreprise",
+					"reponse": "Définir les valeurs et les principes de votre entreprise",
 					"score": {
 						"business": 0,
 						"gestion": 0,
@@ -386,7 +387,7 @@
 					}
 				},
 				{
-					"reponse": "Publier une annonce de recrutement et participer à des entretiens d'embauche",
+					"reponse": "Publier une offre d’emploi et faire les entretiens",
 					"score": {
 						"business": 0,
 						"gestion": 1,
