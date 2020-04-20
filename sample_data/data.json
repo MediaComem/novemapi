@@ -398,11 +398,6 @@
 					}
 				}
 			]
-		},
-		"etape9": {
-			"niveau": 9,
-			"question": "Voilà votre profil de compétences en ingénierie des médias !",
-			"propositions": {}
 		}
 	}
 }
