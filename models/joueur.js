@@ -40,6 +40,12 @@ const joueurSchema = new Schema({
 		validate: [ validator.isEmail, 'L\'adresse email n\'est pas valide' ]
 	},
 
+	newsletter: {
+		type: Boolean,
+		required: false,
+		default: false
+	},
+
 	evenement_id: {
 		type: Schema.Types.ObjectId,
 		required: false,

@@ -19,11 +19,11 @@ router.get('/emails', authenticateAdmin, function(req, res, next) {
 		if (err) {
 			return next(err);
 		}
-		var emails = "";
+		var emails = "email,newsletter\n";
 		Object.keys(joueurs).forEach(function(joueur){
 			if(joueurs[joueur].email != undefined){
-				emails = emails + joueurs[joueur].email + ",";
-			}		
+				emails = emails + joueurs[joueur].email + ","+ joueurs[joueur].newsletter + "\n";
+			}
 		})
 		res.send(emails);
 	});
@@ -68,6 +68,9 @@ router.patch('/:id', loadJoueur, function(req, res, next) {
 	}
 	if (req.body.email !== undefined) {
 		req.joueur.email = req.body.email;
+	}
+	if (req.body.newsletter !== undefined) {
+		req.joueur.newsletter = req.body.newsletter;
 	}
 
 	req.joueur.save(function(err, savedJoueur) {

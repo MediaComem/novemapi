@@ -399,11 +399,6 @@
 				}
 			]
 		},
-		"etape8": {
-			"niveau": 8,
-			"question": "C'est terminé ! Nous pouvons maintenant définir votre profil d'ingénieur·e des médias. Avant cela, aimeriez-vous recevoir des informations complémentaires sur la formation BSc en ingénierie des médias par e-mail ?",
-			"propositions": {}
-		},
 		"etape9": {
 			"niveau": 9,
 			"question": "Voilà votre profil de compétences en ingénierie des médias !",
