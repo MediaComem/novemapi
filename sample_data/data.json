@@ -21,7 +21,7 @@
 			"propositions": [
 				{
 					"reponse": "Appareil photo",
-					"image_rel_url": "/images/tools/camera.svg",
+					"filename": "camera",
 					"score": {
 						"business": 0,
 						"gestion": 0,
@@ -33,7 +33,7 @@
 				},
 				{
 					"reponse": "Smartphone",
-					"image_rel_url": "/images/tools/smartphone.svg",
+					"filename": "smartphone",
 					"score": {
 						"business": 2,
 						"gestion": 2,
@@ -45,7 +45,7 @@
 				},
 				{
 					"reponse": "Smartwatch",
-					"image_rel_url": "/images/tools/smartwatch.svg",
+					"filename": "smartwatch",
 					"score": {
 						"business": 3,
 						"gestion": 2,
@@ -57,7 +57,7 @@
 				},
 				{
 					"reponse": "Ordinateur",
-					"image_rel_url": "/images/tools/computer.svg",
+					"filename": "computer",
 					"score": {
 						"business": 0,
 						"gestion": 0,
@@ -69,7 +69,7 @@
 				},
 				{
 					"reponse": "Outil de gestion de projets",
-					"image_rel_url": "/images/tools/projects.svg",
+					"filename": "projects",
 					"score": {
 						"business": 0,
 						"gestion": 0,
@@ -81,7 +81,7 @@
 				},
 				{
 					"reponse": "Tablette pour du dessin",
-					"image_rel_url": "/images/tools/draw.svg",
+					"filename": "draw",
 					"score": {
 						"business": 1,
 						"gestion": 2,
