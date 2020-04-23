@@ -9,7 +9,7 @@ const router = express.Router();
 /* Import sample data */
 
 router.post('/', authenticateAdmin, function(req, res, next) {
-	seeder.seed(data).then(function() {
+	seeder.seed(data, { dropCollections: true }).then(function() {
 		res.sendStatus(204);
 	}).catch(function(err) {
 		return next(err);
