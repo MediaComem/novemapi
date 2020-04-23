@@ -131,7 +131,7 @@
 					}
 				},
 				{
-					"reponse": "Développer une nouvelle fonctionnalité pour une site internet",
+					"reponse": "Développer une nouvelle fonctionnalité pour un site internet",
 					"score": {
 						"business": 0,
 						"gestion": 0,
@@ -142,7 +142,7 @@
 					}
 				},
 				{
-					"reponse": "Trouver un outil de gestion pour les réseaux sociaux",
+					"reponse": "Trouver un outil de gestion pour les réseaux sociaux de l'entreprise",
 					"score": {
 						"business": 1,
 						"gestion": 0,
@@ -267,7 +267,7 @@
 		},
 		"etape5": {
 			"niveau": 5,
-			"question": "<p>Quelques années plus tard, vous aimerez changer de boîte, vous regardez donc les offres d’emploi&nbsp;!</p><p>Choisissez celle qui vous plairait le plus …</p>",
+			"question": "<p>Quelques années plus tard, vous aimeriez changer de boîte, vous regardez donc les offres d’emploi&nbsp;!</p><p>Choisissez le poste qui vous plairait le plus …</p>",
 			"propositions": [
 				{
 					"reponse": {
@@ -329,7 +329,7 @@
 		},
 		"etape6": {
 			"niveau": 6,
-			"question": "Après avoir discuté avec vos proches, vous réalisez que vous avez plutôt envie de créer votre propre entreprise. <strong>Triez votre liste</strong> en fonction de vos actions …",
+			"question": "Après avoir discuté avec vos proches, vous réalisez que vous avez plutôt envie de créer votre propre entreprise. <strong>Triez votre liste</strong> en fonction de vos envies …",
 			"propositions": [
 				{
 					"reponse": "Créer l’identité visuelle de votre entreprise",
