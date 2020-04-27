@@ -17,7 +17,7 @@
 		"_model": "Etape",
 		"etape1": {
 			"niveau": 1,
-			"question": "Vous voilà engagé·e dans une entreprise! Avant de commencer à travailler, on vous demande de choisir deux outils …",
+			"question": "Vous voilà engagé·e dans une entreprise&nbsp;! Avant de commencer à travailler, on vous demande de choisir deux outils…",
 			"propositions": [
 				{
 					"reponse": "Appareil photo",
@@ -167,7 +167,7 @@
 		},
 		"etape3": {
 			"niveau": 3,
-			"question": "<p>Votre collègue a besoin de votre aide sur un site internet, il vous confie quatre activités à réaliser dans la journée.</p><p>Triez-les selon vos préférences …</p>",
+			"question": "<p>Votre collègue a besoin de votre aide sur un site internet, il vous confie quatre activités à réaliser dans la journée.</p><p>Triez-les selon vos préférences…</p>",
 			"propositions": [
 				{
 					"reponse": "L’accompagner chez le client pour parler du contenu du site",
@@ -217,7 +217,7 @@
 		},
 		"etape4": {
 			"niveau": 4,
-			"question": "Fin d’année, vous avez comme mission d’organiser une journée <strong>“Team Building”</strong>. Vous avez donc rédigé une liste et vous devez prendre la décision finale, que choisissez-vous? ",
+			"question": "Vous avez comme mission d’organiser une journée “Team Building”. Vous avez donc rédigé une liste et vous devez prendre la décision finale, que choisissez-vous? ",
 			"propositions": [
 				{
 					"reponse": "Un jeu de piste en extérieur, imaginé et mis en place par vos soins",
@@ -267,7 +267,7 @@
 		},
 		"etape5": {
 			"niveau": 5,
-			"question": "<p>Quelques années plus tard, vous aimeriez changer de boîte, vous regardez donc les offres d’emploi&nbsp;!</p><p>Choisissez le poste qui vous plairait le plus …</p>",
+			"question": "<p>Quelques années plus tard, vous aimeriez changer de boîte, vous regardez donc les offres d’emploi&nbsp;!</p><p>Choisissez le poste qui vous plairait le plus</p>",
 			"propositions": [
 				{
 					"reponse": {
@@ -329,7 +329,7 @@
 		},
 		"etape6": {
 			"niveau": 6,
-			"question": "Après avoir discuté avec vos proches, vous réalisez que vous avez plutôt envie de créer votre propre entreprise. <strong>Triez votre liste</strong> en fonction de vos envies …",
+			"question": "Après avoir discuté avec vos proches, vous réalisez que vous avez plutôt envie de créer votre propre entreprise. Triez votre liste en fonction de vos envies.",
 			"propositions": [
 				{
 					"reponse": "Créer l’identité visuelle de votre entreprise",
